@@ -132,9 +132,8 @@ kernel/configs/android-*.cfg
 #
 Android.bp
 
-build.sh
-error.log
+sweet.sh
+log.txt
 out/
-toolchain/
-zip/
-KernelSU/
+clang/
+AnyKernel/
