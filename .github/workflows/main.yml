@@ -22,7 +22,7 @@ jobs:
         sudo apt install libc6-dev clang flex bison libssl-dev bc python3 zip unzip git lld llvm zstd tar wget
         mkdir -p $GITHUB_WORKSPACE/kernel_workspace
         
-    - name: Download NeutronClang and AnyKernel3
+    - name: Download NeutronClang
       run: |
         cd $GITHUB_WORKSPACE/kernel_workspace
         mkdir clang
@@ -30,11 +30,12 @@ jobs:
         bash <(curl -s "https://raw.githubusercontent.com/Neutron-Toolchains/antman/main/antman") -S
         pwd
         export PATH="$GITHUB_WORKSPACE/kernel_workspace/clang/bin:$PATH"
-        git clone https://github.com/miguelmatira64/AnyKernel.git
-    - name: Download kernel source
+        
+    - name: Download kernel source and AnyKernel3
       run: |
         cd $GITHUB_WORKSPACE/kernel_workspace
         git clone https://github.com/miguelmatira64/zelo-sweet kernel --depth=1
+        git clone https://github.com/miguelmatira64/AnyKernel.git
         
     - name: Compiling Kernel
       run: |
