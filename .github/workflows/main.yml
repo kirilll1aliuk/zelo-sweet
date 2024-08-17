@@ -31,11 +31,10 @@ jobs:
         pwd
         export PATH="$GITHUB_WORKSPACE/kernel_workspace/clang/bin:$PATH"
         
-    - name: Download kernel source and AnyKernel3
+    - name: Download kernel source 
       run: |
         cd $GITHUB_WORKSPACE/kernel_workspace
         git clone https://github.com/miguelmatira64/zelo-sweet kernel --depth=1
-        git clone https://github.com/miguelmatira64/AnyKernel.git
         
     - name: Compiling Kernel
       run: |
