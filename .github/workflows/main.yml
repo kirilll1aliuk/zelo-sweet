@@ -30,7 +30,7 @@ jobs:
     - name: Download kernel source
       run: |
         cd $GITHUB_WORKSPACE/kernel_workspace
-        git clone https://github.com/miguelmatira64/kernel_ziaomi_6150.git kernel --depth=1
+        git clone https://github.com/miguelmatira64/zelo-sweet kernel --depth=1
 
         - name: Secrets for Bot Integration 
         run: |
