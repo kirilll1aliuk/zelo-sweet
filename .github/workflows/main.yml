@@ -1,0 +1,54 @@
+name: Kernel Compiler
+on:
+  watch:
+    types: [started]
+
+  workflow_dispatch:
+
+jobs:
+  build:
+    name: Compile ZeloKernel + NoKSU
+    runs-on: ubuntu-24.04
+    steps:
+    - uses: actions/checkout@v4
+
+    - name: Setup build kernel environment
+      run: |
+        sudo apt update
+        sudo apt install libc6-dev clang flex bison libssl-dev bc python3 zip unzip git lld llvm zstd tar wget
+        mkdir -p $GITHUB_WORKSPACE/kernel_workspace
+        
+    - name: Download NeutronClang and AnyKernel3
+      run: |
+        cd $GITHUB_WORKSPACE/kernel_workspace
+        mkdir clang
+        cd clang
+        bash <(curl -s "https://raw.githubusercontent.com/Neutron-Toolchains/antman/main/antman") -S
+        pwd
+        export PATH="$GITHUB_WORKSPACE/kernel_workspace/clang/bin:$PATH"
+        git clone https://github.com/miguelmatira64/AnyKernel.git
+    - name: Download kernel source
+      run: |
+        cd $GITHUB_WORKSPACE/kernel_workspace
+        git clone https://github.com/miguelmatira64/kernel_ziaomi_6150.git kernel --depth=1
+
+        - name: Secrets for Bot Integration 
+        run: |
+          echo "CHAT_ID: ${{ secrets.CHAT_ID }}"
+          echo "PUBCHAT_ID: ${{ secrets.PUBCHAT_ID }}"
+          echo "BOT_ID: ${{ secrets.BOT_ID }}"
+        
+    - name: Compiling Kernel
+      run: |
+        cd $GITHUB_WORKSPACE/kernel_workspace/kernel
+        chmod +x sweet.sh
+        ./sweet.sh
+        filename=$(find . -name Quick* -printf '%f\n')
+        echo $filename
+        echo "FILENAME=$filename" >> $GITHUB_ENV
+        
+    - name: Uploading Kernel
+      uses: actions/upload-artifact@v4
+      with:
+        name: ZeloKernel
+        path: ${{ github.workspace }}/kernel_workspace/kernel/${{ env.FILENAME }}
