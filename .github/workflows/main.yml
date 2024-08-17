@@ -4,10 +4,6 @@ on:
     types: [started]
 
   workflow_dispatch:
-env:
-  CHAT_ID: ${{ secrets.CHAT_ID }}
-  PUBCHAT_ID: ${{ secrets.PUBCHAT_ID }}
-  BOT_ID: ${{ secrets.BOT_ID }}
 
 jobs:
   build:
