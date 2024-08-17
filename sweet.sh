@@ -33,9 +33,9 @@ export TYPE="Beta"
 export DISTRO=$(source /etc/os-release && echo "${NAME}")
 
 # Telegram Integration Variables
-CHAT_ID="$1"
-PUBCHAT_ID="$2"
-BOT_ID="$3"
+CHAT_ID="-1002220434841"
+PUBCHAT_ID="-1002220434841"
+BOT_ID="7371132599:AAGRERzZPpjKgk_8wo72H3-U6EJPnX-a_Nk"
 
 function publicinfo() {
     curl -s -X POST "https://api.telegram.org/bot${BOT_ID}/sendMessage" \
