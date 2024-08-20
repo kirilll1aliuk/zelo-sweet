@@ -7,7 +7,7 @@ on:
 
 jobs:
   build:
-    name: Compile ZeloKernel + KernelSU
+    name: Compile NeñaOnly2025 + NoKernelSU
     runs-on: ubuntu-24.04
     steps:
     - uses: actions/checkout@v4
@@ -50,5 +50,5 @@ jobs:
     - name: Uploading Kernel
       uses: actions/upload-artifact@v4
       with:
-        name: ZeloKernel
+        name: NeñaOnly
         path: ${{ github.workspace }}/kernel_workspace/kernel/${{ env.FILENAME }}
