@@ -30,13 +30,7 @@ jobs:
     - name: Download kernel source 
       run: |
         cd $GITHUB_WORKSPACE/kernel_workspace
-        git clone -b zelo-KSU https://github.com/miguelmatira64/zelo-sweet kernel --depth=1
-
-    - name: Integrate KernelSU @rsuntk
-      run: | 
-        cd $GITHUB_WORKSPACE/kernel_workspace/kernel
-        rm -rf KernelSU/
-        curl -LSs "https://raw.githubusercontent.com/rsuntk/KernelSU/main/kernel/setup.sh" | bash -s e86324a
+        git clone https://github.com/miguelmatira64/zelo-sweet kernel --depth=1
         
     - name: Compiling Kernel
       run: |
