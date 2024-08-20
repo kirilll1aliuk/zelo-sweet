@@ -15,8 +15,8 @@ DTBO=$(pwd)/out/arch/arm64/boot/dtbo.img
 IMAGE=$(pwd)/out/arch/arm64/boot/Image.gz-dtb
 
 # Naming Variables
-KNAME="ZeloKernel"
-VERSION="v6.9"
+KNAME="NeñaTapakanMokoPleaseSanaAkoPaRin"
+VERSION="v9.11"
 CODENAME="sweet"
 MIN_HEAD=$(git rev-parse HEAD)
 export KVERSION="${KNAME}-${VERSION}-${CODENAME}-$(echo ${MIN_HEAD:0:8})"
@@ -25,8 +25,8 @@ export KVERSION="${KNAME}-${VERSION}-${CODENAME}-$(echo ${MIN_HEAD:0:8})"
 LINKER=ld.lld
 export COMPILER_NAME="$(${TCDIR}/bin/clang --version | head -n 1 | perl -pe 's/\(http.*?\)//gs' | sed -e 's/  */ /g' -e 's/[[:space:]]*$//')"
 export LINKER_NAME="$("${TCDIR}"/bin/${LINKER} --version | head -n 1 | sed 's/(compatible with [^)]*)//' | head -n 1 | perl -pe 's/\(http.*?\)//gs' | sed -e 's/  */ /g' -e 's/[[:space:]]*$//')"
-export KBUILD_BUILD_USER=puerconiox009
-export KBUILD_BUILD_HOST=andromedawashere
+export KBUILD_BUILD_USER=neñabalikkanapleasehuhu
+export KBUILD_BUILD_HOST=mydearniggasonly69420
 export DEVICE="Redmi Note 10 Pro/Pro Max"
 export CODENAME="sweet"
 export TYPE="Beta"
