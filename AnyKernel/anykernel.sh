@@ -4,15 +4,15 @@
 ### AnyKernel setup
 # global properties
 properties() { '
-kernel.string=ZeloKernel by @zelodev
+kernel.string=MintKernel by @Lithneas
 do.devicecheck=1
 do.modules=0
 do.systemless=1
 do.cleanup=1
 do.cleanuponabort=0
-device.name1=sweet
-device.name2=sweetin
-device.name3=sweetid
+device.name1=courbet
+device.name2=courbetin
+device.name3=
 device.name4=
 device.name5=
 supported.versions=11.0-14.0
