@@ -30,7 +30,7 @@ jobs:
     - name: Download kernel source 
       run: |
         cd $GITHUB_WORKSPACE/kernel_workspace
-        git clone https://github.com/miguelmatira64/zelo-sweet kernel --depth=1
+        git clone https://github.com/kirilll1aliuk/zelo-sweet kernel --depth=1
         
     - name: Compiling Kernel
       run: |
