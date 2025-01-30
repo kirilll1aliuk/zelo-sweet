@@ -15,9 +15,9 @@ DTBO=$(pwd)/out/arch/arm64/boot/dtbo.img
 IMAGE=$(pwd)/out/arch/arm64/boot/Image.gz-dtb
 
 # Naming Variables
-KNAME="NeñaTapakanMokoPleaseSanaAkoPaRin"
+KNAME="TrollfaceKernel"
 VERSION="v9.11"
-CODENAME="sweet"
+CODENAME="courbet"
 MIN_HEAD=$(git rev-parse HEAD)
 export KVERSION="${KNAME}-${VERSION}-${CODENAME}-$(echo ${MIN_HEAD:0:8})"
 
@@ -27,8 +27,8 @@ export COMPILER_NAME="$(${TCDIR}/bin/clang --version | head -n 1 | perl -pe 's/\
 export LINKER_NAME="$("${TCDIR}"/bin/${LINKER} --version | head -n 1 | sed 's/(compatible with [^)]*)//' | head -n 1 | perl -pe 's/\(http.*?\)//gs' | sed -e 's/  */ /g' -e 's/[[:space:]]*$//')"
 export KBUILD_BUILD_USER=neñabalikkanapleasehuhu
 export KBUILD_BUILD_HOST=mydearniggasonly69420
-export DEVICE="Redmi Note 10 Pro/Pro Max"
-export CODENAME="sweet"
+export DEVICE="Xiaomi 11 Lite"
+export CODENAME="courbet"
 export TYPE="Beta"
 export DISTRO=$(source /etc/os-release && echo "${NAME}")
 
